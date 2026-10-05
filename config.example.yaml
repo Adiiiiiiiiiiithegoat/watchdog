@@ -1,0 +1,26 @@
+# Copy to config.yaml (gitignored) and fill in. The token is a root password to this machine.
+discord:
+  token: "PASTE_BOT_TOKEN"
+  webhook_url: ""            # channel webhook — watchdog-mcp posts run progress here
+  allowed_user_ids: [123456789012345678]
+  allowed_channel_ids: []    # empty = DMs + any channel the allowed user writes in
+
+ollama:
+  host: "http://localhost:11434"
+  model: "llama3.1:8b"       # A/B against qwen2.5-coder:7b, pin the winner
+  keep_alive: "30m"          # not optional — cold loads are ~50s
+  max_steps: 10
+
+claude_code:
+  binary: "claude"
+  stuck_threshold_sec: 900   # no log growth for 15 min = hung
+  max_restarts: 3
+  heartbeat_interval_sec: 1800
+  min_headroom_pct: 20       # refuse to start a run with less 5h-window headroom
+
+git:
+  push_main_allowlist: []    # repos where !push to main/master is permitted
+
+alerts:
+  sound_file: ""             # optional .wav; empty = beeps
+  usage_alert_thresholds: [75, 90]

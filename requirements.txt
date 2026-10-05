@@ -1,0 +1,7 @@
+discord.py
+mcp-use
+langchain-ollama
+fastmcp
+psutil
+pyyaml
+httpx
